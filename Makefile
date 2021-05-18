@@ -95,7 +95,7 @@ deploy: generate manifests run-kind ## Deploy controller in the configured Kuber
 manifests: CRD_OPTIONS ?= "crd:crdVersions=v1"
 manifests: controller-gen ## Generate manifests e.g. CRD, RBAC etc.
 	$(CONTROLLER_GEN) $(CRD_OPTIONS) rbac:roleName=manager-role webhook paths="./..." output:crd:artifacts:config=config/crd/bases
-	@./scripts/split_roles_yaml.sh
+	#@./scripts/split_roles_yaml.sh
 
 
 .PHONY: fmt
