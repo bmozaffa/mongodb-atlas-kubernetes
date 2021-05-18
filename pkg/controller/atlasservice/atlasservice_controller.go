@@ -62,6 +62,7 @@ type AtlasServiceReconciler struct {
 func (r *AtlasServiceReconciler) Reconcile(context context.Context, req ctrl.Request) (ctrl.Result, error) {
 	_ = context
 	log := r.Log.With("atlasservice", req.NamespacedName)
+	log.Info("Will reconcile")
 
 	service := &mdbv1.AtlasService{}
 	result := customresource.PrepareResource(r.Client, req, service, log)
